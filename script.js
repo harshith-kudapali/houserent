@@ -1,20 +1,26 @@
-// scripts.js
-function initMap() {
-    var location = { lat: 40.7128, lng: -74.0060 }; // Example: Change with your house's coordinates
-    var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 14,
-        center: location
-    });
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-}
+document.addEventListener('DOMContentLoaded', function () {
 
-var swiper = new Swiper('.swiper-container', {
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
+    const exploreButton = document.querySelector('.cta-exp');
+    if (exploreButton) {
+        exploreButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const propertySection = document.querySelector('#property-details');
+            if (propertySection) {
+                propertySection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start',
+                });
+            }
+        });
+    }
+
+    const callButton = document.querySelector('.cta-call');
+    if (callButton) {
+        callButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const phoneNumber = callButton.getAttribute('href');
+            window.location.href = phoneNumber;
+        });
+    }
+
 });
