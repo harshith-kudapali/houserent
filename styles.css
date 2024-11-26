@@ -275,3 +275,31 @@ body {
         grid-template-columns: 1fr;
     }
 }
+/* Styling for the iframes */
+iframe {
+    width: 100%; /* Make the iframe take the full width of its container */
+    height: 400px; /* Set a default height */
+    border: none; /* Remove the default border around the iframe */
+    border-radius: 8px; /* Optional: adds rounded corners to the iframe */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for better visual effect */
+    margin-bottom: 20px; /* Adds spacing between iframe and other elements */
+    transition: all 0.3s ease; /* Smooth transition for any hover effects or changes */
+}
+
+/* Optional: On hover, you can make the iframe scale up slightly */
+iframe:hover {
+    transform: scale(1.03); /* Slightly enlarges the iframe on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    iframe {
+        height: 300px; /* Adjust the height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    iframe {
+        height: 250px; /* Further reduce height for very small screens */
+    }
+}
